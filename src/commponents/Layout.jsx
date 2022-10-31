@@ -1,12 +1,16 @@
 import { Outlet, Link } from "react-router-dom";
+import { GrHome } from "react-icons/gr";
 
 const Layout = () => {
 	return (
 		<div>
 			<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 				<div className="container-fluid">
-					<a className="navbar-brand" href="#">
-						Navbar
+					<a
+						href="/"
+						class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none"
+					>
+						<GrHome />
 					</a>
 					<button
 						className="navbar-toggler"
@@ -31,11 +35,7 @@ const Layout = () => {
 									</Link>
 								</button>
 							</li>
-							<li className="nav-item">
-								<Link to="/" className="nav-link">
-									Home
-								</Link>
-							</li>
+
 							<li className="nav-item">
 								<Link to="/blogs" className="nav-link">
 									Blogs
@@ -54,7 +54,7 @@ const Layout = () => {
 									data-bs-toggle="dropdown"
 									aria-expanded="false"
 								>
-									Dropdown
+									Categories
 								</a>
 								<ul className="dropdown-menu">
 									<li>
@@ -81,17 +81,25 @@ const Layout = () => {
 								<a className="nav-link ">Disabled</a>
 							</li>
 						</ul>
-						<form className="d-flex" role="search">
+						<button type="button" className="btn btn-warning me-2">
+							Dashboard
+						</button>
+						<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
 							<input
-								className="form-control me-2"
 								type="search"
-								placeholder="Search"
+								class="form-control form-control-dark text-bg-dark"
+								placeholder="Search..."
 								aria-label="Search"
 							/>
-							<button className="btn btn-outline-success" type="submit">
-								Search
-							</button>
 						</form>
+						<div className="">
+							<button type="button" className="btn btn-outline-light me-2">
+								Login
+							</button>
+							<button type="button" className="btn btn-primary">
+								Sign-up
+							</button>
+						</div>
 					</div>
 				</div>
 			</nav>
